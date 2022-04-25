@@ -1,0 +1,14 @@
+Capítulo IV
+Parte bonus
+El proyecto get_next_line es bastante directo y no deja mucho margen a los bonus,
+pero seguramente tengas un montón de imaginación. Si has clavado la parte obligatoria
+y la tienes PERFECTA, puedes ir a por los bonus. De nuevo, tus bonus no se tendrán en
+cuenta si la parte obligatoria no está PERFECTA.
+
+Entrega los tres archivos iniciales con _bonus.[c/h] para esta parte.
+
+	• Entrega get_next_line con una sola variable estática.
+	• Sé capaz de gestionar múltiples fd con tu get_next_line. Es decir, si tienes tres fd
+	disponibles para lectura (por ejemplo: 3, 4 y 5), debes poder utilizar get_next_line
+	una vez sobre el fd 3, otra vez sobre el fd 4, y otra vez sobre el fd 5 de forma
+	intermitente. Y sí, no debe perder el hilo de lectura de cada uno de los fd.
