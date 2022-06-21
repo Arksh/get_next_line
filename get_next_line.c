@@ -12,10 +12,6 @@
 
 #include "get_next_line.h"
 
-/*
-	Take the buffer string and join it with the buff one 
-	Finally free the buffer allocated on the buffer pointer.
-*/
 static char	*ft_joinfree(char *buffer, char *buf)
 {
 	char	*temp;
@@ -25,14 +21,6 @@ static char	*ft_joinfree(char *buffer, char *buf)
 	return (temp);
 }
 
-/*
-	Ft_Nextline Function
-		Find len of the first line
-		Handle the end of line = \0 returning NULL
-		Then allocate the memory needed for the line variable
-			(len of file - len of firstline + 1)
-		Finally overturn the buffer on the line variable to return it.
-*/
 static char	*ft_nextline(char *buffer)
 {
 	int		i;
@@ -56,13 +44,6 @@ static char	*ft_nextline(char *buffer)
 	return (line);
 }
 
-/*
-	Ft_Line
-		Take the buffer, and going to the end of line we get the size
-		Use the size to allocate the neded memory for thhe line
-		And overturn the buffer content on the line.
-		Finally if the end of line is \n or \0, replace with \n
-*/
 static char	*ft_line(char *buffer)
 {
 	char	*line;
@@ -85,18 +66,6 @@ static char	*ft_line(char *buffer)
 	return (line);
 }
 
-/*
-	Read_file function
-
-		If *res doesn't exists then we malloc a 1x1
-		After that we malloc the buffer with size of char
-		Finally while the file doesn't end
-			Read the buffer using BUFFER_SIZE as a the bytes_read size
-				If the bytes read are -1 then we free the buffer and return a NULL
-			we make the bytes_read position (or final) 0, so we prevent memory leaks
-			finally we join the res with the buffer
-				if \n is find we quit the while
-*/
 char	*read_file(int fd, char *res)
 {
 	char	*buffer;
@@ -123,15 +92,6 @@ char	*read_file(int fd, char *res)
 	return (res);
 }
 
-/*
-	Base Funcion Get_Next_Line
-
-		We handle the error asking for a negative fd / empty or negative BUFFER_SIZE
-		If everything correct then we use the read_file function passing the return
-			to the buffer variable, handling possible empty buffer errors
-		Finally we use the ft_line function to get the line to return
-		Together with the ft_nextline function to get the next line
-*/
 char	*get_next_line(int fd)
 {
 	static char	*buffer;
